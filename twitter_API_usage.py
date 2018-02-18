@@ -17,7 +17,8 @@ ctx.verify_mode = ssl.CERT_NONE
 while True:
     print('')
     acct = input('Enter Twitter Account:')
-    if (len(acct) < 1): break
+    if (len(acct) < 1): 
+        break
     url = twurl.augment(TWITTER_URL,
                         {'screen_name': acct, 'count': '50'})
     print('Retrieving', url)
@@ -38,4 +39,3 @@ while True:
     print(parse_file(js, information))
     headers = dict(connection.getheaders())
     print('Remaining', headers['x-rate-limit-remaining'])
-
