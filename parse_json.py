@@ -3,7 +3,6 @@
 # You will get information about users friends in form of list with tuples
 
 
-
 def parse_file(file, parameters):
     '''
     (json, list) -> list
@@ -43,6 +42,7 @@ def parse_file(file, parameters):
 
             elif param == 'entities':
                 parse([param], file[user]['entities'])
+                
             else:
                 try:
                     current.append((param, file[user][param]))
@@ -57,9 +57,9 @@ def parse_file(file, parameters):
 
 def write_to_file(info):
     '''
-    Writes o file
-    :param info:
-    :return:
+    Writes to file
+    info: list witn information after parsing
+    return: none
     '''
     with open('results_of_008_hacker_attack', 'w', encoding='utf-8') as f:
         for user in info:
@@ -70,3 +70,4 @@ def write_to_file(info):
                     f.write(str(i[x]) + ': \t')
                 f.write(str(i[-2]) + ': ' + answer + '\n')
             f.write('\n\n')
+
